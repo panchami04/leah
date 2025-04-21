@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import pickle
 import numpy as np
-
+import pandas as pd 
 app = Flask(__name__)
 
 # Load the trained model
