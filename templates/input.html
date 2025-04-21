@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input - Life Expectancy Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Your Details</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <label for="year">Year:</label>
+            <input type="number" id="year" name="year" required min="2000" max="2025">
+
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+                <option value="0">Developing</option>
+                <option value="1">Developed</option>
+            </select>
+
+            <label for="adult_mortality">Adult Mortality (per 1000):</label>
+            <input type="number" id="adult_mortality" name="adult_mortality" step="0.1" required min="0">
+
+            <label for="infant_deaths">Infant Deaths (per 1000):</label>
+            <input type="number" id="infant_deaths" name="infant_deaths" required min="0">
+
+            <label for="alcohol">Alcohol Consumption (liters per capita):</label>
+            <input type="number" id="alcohol" name="alcohol" step="0.1" required min="0">
+
+            <label for="percentage_expenditure">Health Expenditure (% of GDP):</label>
+            <input type="number" id="percentage_expenditure" name="percentage_expenditure" step="0.1" required min="0">
+
+            <label for="hepatitis_b">Hepatitis B Immunization (%):</label>
+            <input type="number" id="hepatitis_b" name="hepatitis_b" required min="0" max="100">
+
+            <label for="measles">Measles Cases (per 1000):</label>
+            <input type="number" id="measles" name="measles" required min="0">
+
+            <label for="bmi">Average BMI:</label>
+            <input type="number" id="bmi" name="bmi" step="0.1" required min="0">
+
+            <label for="under_five_deaths">Under-Five Deaths (per 1000):</label>
+            <input type="number" id="under_five_deaths" name="under_five_deaths" required min="0">
+
+            <label for="polio">Polio Immunization (%):</label>
+            <input type="number" id="polio" name="polio" required min="0" max="100">
+
+            <label for="total_expenditure">Total Health Expenditure (% of GDP):</label>
+            <input type="number" id="total_expenditure" name="total_expenditure" step="0.1" required min="0">
+
+            <label for="diphtheria">Diphtheria Immunization (%):</label>
+            <input type="number" id="diphtheria" name="diphtheria" required min="0" max="100">
+
+            <label for="hiv_aids">HIV/AIDS Prevalence (%):</label>
+            <input type="number" id="hiv_aids" name="hiv_aids" step="0.1" required min="0">
+
+            <label for="gdp">GDP (USD):</label>
+            <input type="number" id="gdp" name="gdp" step="0.1" required min="0">
+
+            <label for="population">Population:</label>
+            <input type="number" id="population" name="population" required min="0">
+
+            <label for="thinness_1_19">Thinness 1-19 Years (%):</label>
+            <input type="number" id="thinness_1_19" name="thinness_1_19" step="0.1" required min="0">
+
+            <label for="thinness_5_9">Thinness 5-9 Years (%):</label>
+            <input type="number" id="thinness_5_9" name="thinness_5_9" step="0.1" required min="0">
+
+            <label for="income_composition">Income Composition of Resources (0-1):</label>
+            <input type="number" id="income_composition" name="income_composition" step="0.01" required min="0" max="1">
+
+            <label for="schooling">Years of Schooling:</label>
+            <input type="number" id="schooling" name="schooling" step="0.1" required min="0">
+
+            <button type="submit">Predict Life Expectancy</button>
+        </form>
+    </div>
+</body>
+</html>
